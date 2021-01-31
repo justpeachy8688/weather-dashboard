@@ -5,14 +5,53 @@
 /*Javascript -
 GIVEN a weather dashboard with form inputs
 WHEN I search for a city
-1.  Search form - event listener on submit button
-2. Save to local Storage
-THEN I am presented with current and future conditions for that city and that city is added to the search history
+1.  Search form - event listener on submit button*/
+$("#search-button").on("click", function (event) {
+    //console.log(event.target);
+    var city = $("#search-value").val()
+    console.log(city)
+    $.ajax({
+        url: "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&apikey=25d8d087027fd4ca304fa1a83a21cf96",
+        method: 'GET',
+    }).then(function (response) {
+        console.log(response)
+        var temperature = response.main.temp
+        console.log(temperature)
+        var windSpeed = response.wind.speed
+        console.log(windSpeed)
+        var humidity = response.main.humidity
+        console.log(humidity)
+        //focus on last- where do i find it?
+        //var uvIndex = 
+    }).catch(function (error) {
+        console.log(error)
+    })
+})
+//2. Save to local Storage
+
+//Write HTML - Use JavaScript to write the HTML in an empty div by creating the element and adding bootstrap classes to it.
+function todayWeather(d) {
+    var header
+    var temp
+    var humid
+    var uv
+
+    document.getElementById('forecast-header')
+    document.getElementById('temperature')
+    document.getElementById('humidity')
+    document.getElementById('wind-speed')
+    document.getElementById('uv-index')
+}
+
+//Basic CSS
+/*THEN I am presented with current and future conditions for that city and that city is added to the search history
 1. Fetch to get weather data from that city using OpenWeatherAPI
 2. put the data from that fetch into my HTML using $(html element).text("TEXT")
+
 WHEN I view current weather conditions for that city
 THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
 1. Pull different places of information from the API
+
 WHEN I view the UV index
 THEN I am presented with a color that indicates whether the conditions are favorable, moderate, or severe
 1. Color code the button to be different colors based on the weather conditions
