@@ -5,11 +5,15 @@ text {
 .search-bar {
     padding-left: 2rem;
 }
-
+/* 
 h5 {
     padding-left: 2rem;
-}
+} */
 
 .fa-search {
     ;
+}
+
+h2 {
+    font-size: large;
 }

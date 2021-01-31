@@ -30,19 +30,17 @@ $("#search-button").on("click", function (event) {
 //2. Save to local Storage
 
 //Write HTML - Use JavaScript to write the HTML in an empty div by creating the element and adding bootstrap classes to it.
-function todayWeather(d) {
-    var header
-    var temp
-    var humid
-    var uv
+var tempEl
 
-    document.getElementById('forecast-header')
-    document.getElementById('temperature')
-    document.getElementById('humidity')
-    document.getElementById('wind-speed')
-    document.getElementById('uv-index')
+function todayWeather(t, w, h) {
+    // var cityEl = document.getElementById('forecast-header').innerHTML = city.val;
+    var tempEl = document.getElementById('temperature').innerHTML = temperature
+    var humidEl = document.getElementById('humidity').innerHTML = humidity
+    var windEl = document.getElementById('wind-speed').innerHTML = windSpeed
+    document.getElementById('uv-index').innerHTML
 }
 
+todayWeather();
 //Basic CSS
 /*THEN I am presented with current and future conditions for that city and that city is added to the search history
 1. Fetch to get weather data from that city using OpenWeatherAPI
