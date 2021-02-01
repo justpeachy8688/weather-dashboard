@@ -17,3 +17,7 @@ h5 {
 h2 {
     font-size: large;
 }
+
+.list-group {
+    width: 25%;
+}

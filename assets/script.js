@@ -17,7 +17,7 @@ $("#search-button").on("click", function (event) {
     var city = $("#search-value").val()
     console.log(city)
     $.ajax({
-        url: "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&apikey=25d8d087027fd4ca304fa1a83a21cf96",
+        url: "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&apikey=25d8d087027fd4ca304fa1a83a21cf96",
         method: 'GET',
     }).then(function (response) {
         console.log(response)
@@ -42,6 +42,8 @@ function addCityToHistory(city) {
     localStorage.setItem("searchHistory", JSON.stringify(searchHistory))
 }
 
+
+
 function renderHistoryItem(city) {
     var li = document.createElement("li")
     li.className = "list-group-item"
@@ -52,7 +54,7 @@ function renderHistoryItem(city) {
     document.getElementById("search-history").prepend(li)
 }
 //Write HTML - Use JavaScript to write the HTML in an empty div by creating the element and adding bootstrap classes to it.
-var tempEl
+//var tempEl
 
 function todayWeather(temperature, windSpeed, humidity) {
     // var cityEl = document.getElementById('forecast-header').innerHTML = city.val;
