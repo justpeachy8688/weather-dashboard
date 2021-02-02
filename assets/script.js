@@ -122,7 +122,7 @@ function getForecast(city) {
                 var p2 = $("<p>").addClass("card-text").text("Humidity: " + response.list[i].main.humidity + "%");
 
                 col.append(card.append(body.append(title, img, p1, p2)));
-                $("#fiveday .row").append(col);
+                $("#fiveday").append(col);
             }
         }
     })
