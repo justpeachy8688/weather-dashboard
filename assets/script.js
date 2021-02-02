@@ -98,13 +98,22 @@ function getWeatherData(lat, lon) {
     })
 }
 
+function getForecast(city) {
+    $.ajax({
+        url: "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=25d8d087027fd4ca304fa1a83a21cf96",
+        method: 'GET',
+    }).then(function (response) {
+        console.log("forecast", response)
+    })
+}
+
 function todayUvi(uviIndex) {
     var uviEl = document.getElementById('uv-index')
     uviEl.textContent = "UV Index: " + uviIndex
-    var btn = $("<span>").addClass("btn btn-sm").text(uviIndex.value);
+    var btn = $("<span>").addClass("btn btn-sm").text(uviIndex);
 
     //btn change colors
-    if (uviIndex.value < 3) {
+    if (uviIndex < 3) {
         btn.addClass("btn-success");
     }
     else if (uviIndex < 7) {
@@ -114,7 +123,7 @@ function todayUvi(uviIndex) {
         btn.addClass("btn-danger");
     }
 
-    $("#forecast-header .card-body").append(uviEl.append(btn));
+    $("#forecast-header .card-body").append($(uviEl).append(btn));
 }
 
 
