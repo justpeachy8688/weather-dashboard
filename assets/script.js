@@ -101,6 +101,20 @@ function getWeatherData(lat, lon) {
 function todayUvi(uviIndex) {
     var uviEl = document.getElementById('uv-index')
     uviEl.textContent = "UV Index: " + uviIndex
+    var btn = $("<span>").addClass("btn btn-sm").text(uviIndex.value);
+
+    //btn change colors
+    if (uviIndex.value < 3) {
+        btn.addClass("btn-success");
+    }
+    else if (uviIndex < 7) {
+        btn.addClass("btn-warning")
+    }
+    else {
+        btn.addClass("btn-danger");
+    }
+
+    $("#forecast-header .card-body").append(uviEl.append(btn));
 }
 
 
