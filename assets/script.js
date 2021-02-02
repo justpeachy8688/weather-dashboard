@@ -50,11 +50,11 @@ function renderHistoryItem(city) {
 
 function todayWeather(temperature, windSpeed, humidity, name) {
     var tempEl = document.getElementById('temperature')
-    tempEl.textContent = "Temperature: " + temperature
+    tempEl.textContent = "Temperature: " + temperature + " °F"
     var humidEl = document.getElementById('humidity')
-    humidEl.textContent = "Humidity: " + humidity
+    humidEl.textContent = "Humidity: " + humidity + " %";
     var windEl = document.getElementById('wind-speed')
-    windEl.textContent = "Wind Speed: " + windSpeed
+    windEl.textContent = "Wind Speed: " + windSpeed + " mph";
     var nameEl = document.getElementById('forecast-header')
     nameEl.textContent = name
 }
@@ -130,7 +130,7 @@ function getForecast(city) {
 
 function todayUvi(uviIndex) {
     var uviEl = document.getElementById('uv-index')
-    uviEl.textContent = "UV Index: " + uviIndex
+    uviEl.textContent = "UV Index: "
     var btn = $("<span>").addClass("btn btn-sm").text(uviIndex);
 
     //btn change colors
