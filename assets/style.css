@@ -22,3 +22,7 @@ h2 {
     width: 25%;
 }
 
+#forecast-header {
+    font-size: x-large;
+    font-weight: 500;
+}

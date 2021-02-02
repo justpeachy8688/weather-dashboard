@@ -48,11 +48,11 @@ function renderHistoryItem(city) {
 
 function todayWeather(temperature, windSpeed, humidity, name) {
     var tempEl = document.getElementById('temperature')
-    tempEl.textContent = temperature
+    tempEl.textContent = "Temperature: " + temperature
     var humidEl = document.getElementById('humidity')
     humidEl.textContent = "Humidity: " + humidity
     var windEl = document.getElementById('wind-speed')
-    windEl.textContent = windSpeed
+    windEl.textContent = "Wind Speed: " + windSpeed
     var nameEl = document.getElementById('forecast-header')
     nameEl.textContent = name
 }
@@ -100,7 +100,7 @@ function getWeatherData(lat, lon) {
 
 function todayUvi(uviIndex) {
     var uviEl = document.getElementById('uv-index')
-    uviEl.textContent = uviIndex
+    uviEl.textContent = "UV Index: " + uviIndex
 }
 
 
