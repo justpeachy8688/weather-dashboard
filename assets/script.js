@@ -15,7 +15,7 @@ for (var i = 0; i < searchHistory.length; i++) {
 $("#search-button").on("click", function (event) {
     //console.log(event.target);
     var city = $("#search-value").val()
-    console.log(city)
+    //console.log(city)
     getcurrentWeather(city);
     getForecast(city);
 
@@ -62,22 +62,22 @@ function todayWeather(temperature, windSpeed, humidity, name) {
 
 
 function getcurrentWeather(searchQuery) {
-    console.log(searchQuery)
+    //console.log(searchQuery)
     $.ajax({
         url: "https://api.openweathermap.org/data/2.5/weather?q=" + searchQuery + "&units=imperial&apikey=25d8d087027fd4ca304fa1a83a21cf96",
         method: 'GET',
     }).then(function (response) {
-        console.log(response)
+        //console.log(response)
         addCityToHistory(response.name)
         renderHistoryItem(response.name)
         var name = response.name
-        console.log(name)
+        //console.log(name)
         var temperature = response.main.temp
-        console.log(temperature)
+        //console.log(temperature)
         var windSpeed = response.wind.speed
-        console.log(windSpeed)
+        //console.log(windSpeed)
         var humidity = response.main.humidity
-        console.log(humidity)
+        //console.log(humidity)
 
         todayWeather(temperature, windSpeed, humidity, name);
         getWeatherData(response.coord.lat, response.coord.lon)
@@ -92,10 +92,10 @@ function getWeatherData(lat, lon) {
         url: "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=minutely,hourly,alerts&units=imperial&appid=25d8d087027fd4ca304fa1a83a21cf96",
         method: 'GET',
     }).then(function (response) {
-        console.log(response)
-        console.log("uviIndex", response.current.uvi)
+        //console.log(response)
+        //console.log("uviIndex", response.current.uvi)
         var uviIndex = response.current.uvi
-        console.log(uviIndex)
+        //console.log(uviIndex)
         todayUvi(uviIndex);
     })
 }
@@ -109,6 +109,7 @@ function getForecast(city) {
         // create for loop to loop over all forecasts
         for (var i = 0; i < response.list.length; i++) {
             if (response.list[i].dt_txt.indexOf("15:00:00") !== -1) {
+                console.log(response.list.length[i])
                 var col = $("<div>").addClass("col-md-2");
                 var card = $("<div>").addClass("card bg-primary text-white");
                 var body = $("<div>").addClass("card-body p-2");
