@@ -17,6 +17,8 @@ $("#search-button").on("click", function (event) {
     var city = $("#search-value").val()
     console.log(city)
     getcurrentWeather(city);
+    getForecast(city);
+
 
 })
 //2. Save to local Storage
@@ -60,6 +62,7 @@ function todayWeather(temperature, windSpeed, humidity, name) {
 
 
 function getcurrentWeather(searchQuery) {
+    console.log(searchQuery)
     $.ajax({
         url: "https://api.openweathermap.org/data/2.5/weather?q=" + searchQuery + "&units=imperial&apikey=25d8d087027fd4ca304fa1a83a21cf96",
         method: 'GET',
@@ -75,7 +78,6 @@ function getcurrentWeather(searchQuery) {
         console.log(windSpeed)
         var humidity = response.main.humidity
         console.log(humidity)
-        //focus on last- where do i find it?
 
         todayWeather(temperature, windSpeed, humidity, name);
         getWeatherData(response.coord.lat, response.coord.lon)
