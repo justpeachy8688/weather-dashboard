@@ -95,7 +95,7 @@ function getWeatherData(lat, lon) {
 
 function getForecast(city) {
     $.ajax({
-        url: "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=25d8d087027fd4ca304fa1a83a21cf96",
+        url: "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=25d8d087027fd4ca304fa1a83a21cf96",
         method: 'GET',
     }).then(function (response) {
         console.log("forecast", response)
@@ -113,6 +113,7 @@ function getForecast(city) {
 
                 var p1 = $("<p>").addClass("card-text").text("Temp: " + response.list[i].main.temp_max + " °F");
                 var p2 = $("<p>").addClass("card-text").text("Humidity: " + response.list[i].main.humidity + "%");
+                //var p3 = $("<p>").addClass("card-text").text("Uv Index: " + response.current.uvi);
 
                 col.append(card.append(body.append(title, img, p1, p2)));
                 $("#fiveday").append(col);
