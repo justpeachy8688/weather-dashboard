@@ -38,14 +38,7 @@ function renderHistoryItem(city) {
     })
     document.getElementById("search-history").prepend(li)
 }
-//Write HTML - Use JavaScript to write the HTML in an empty div by creating the element and adding bootstrap classes to it.
-/*THEN I am presented with current and future conditions for that city and that city is added to the search history
-1. Fetch to get weather data from that city using OpenWeatherAPI
-2. put the data from that fetch into my HTML*/
 
-//conditional statement that checks the value of the UVI and compares it with the set value that 
-//0-3 green background, greater than 3 but less than 7 warning orange, 7+ red
-//use a button with built in features danger etc
 //var date = new Date(response.daily[i].dt).toLocalDateString()
 
 function todayWeather(temperature, windSpeed, humidity, name) {
