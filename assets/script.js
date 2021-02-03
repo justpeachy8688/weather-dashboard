@@ -1,17 +1,10 @@
-//Write HTML- Do we write the html for the weather API now, or do we use Javascript to write the HTML?
 
-//Basic CSS
-
-/*Javascript -
-GIVEN a weather dashboard with form inputs
-WHEN I search for a city
-1.  Search form - event listener on submit button*/
 var searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || []
 
 for (var i = 0; i < searchHistory.length; i++) {
     renderHistoryItem(searchHistory[i])
 }
-
+//event listener on submit button
 $("#search-button").on("click", function (event) {
     //console.log(event.target);
     var city = $("#search-value").val()
@@ -99,6 +92,9 @@ function getForecast(city) {
         method: 'GET',
     }).then(function (response) {
         console.log("forecast", response)
+        //empty previous search
+        $("#fiveday").empty();
+
         // create for loop to loop over all forecasts
         for (var i = 0; i < response.list.length; i++) {
             if (response.list[i].dt_txt.indexOf("15:00:00") !== -1) {
