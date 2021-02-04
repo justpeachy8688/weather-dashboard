@@ -34,3 +34,7 @@ background-repeat: no-repeat;
 background-attachment: fixed;  
 background-size: cover;
 }
+
+.card-body {
+    font-weight: bold;
+}
