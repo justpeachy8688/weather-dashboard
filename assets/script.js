@@ -21,6 +21,9 @@ function addCityToHistory(city) {
 }
 
 
+// $(".search-history").on("click", "li", function () {
+//     getCurrentWeather($(this).text());
+// });
 
 function renderHistoryItem(city) {
     var li = document.createElement("li")

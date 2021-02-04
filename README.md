@@ -6,8 +6,8 @@
 This application uses Open Weather API to retrieve weather data to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS. It also stores your searches in your local storage!
 
 ## contents of project
-This project contains an index.html, a style.css and a script.js along with a screenshot of the application.
-[Link to deployed application](https://justpeachy8688.github.io/weather-dashboard/)
+This project contains an index.html, a style.css and a script.js along with a screenshot of the application.<br>
+View the application here: [Link to deployed application](https://justpeachy8688.github.io/weather-dashboard/)
 
 ## User Story
 AS A traveler<br>
