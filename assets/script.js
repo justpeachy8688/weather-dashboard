@@ -11,27 +11,28 @@ $("#search-button").on("click", function (event) {
     //console.log(city)
     getcurrentWeather(city);
     getForecast(city);
-
-
 })
+
+$(".list-group-item").on("click", function () {
+    console.log($(this).text())
+    getcurrentWeather($(this).text());
+})
+
 //2. Save to local Storage
 function addCityToHistory(city) {
+    // if city is already in search history then just return, 
     searchHistory.push(city)
     localStorage.setItem("searchHistory", JSON.stringify(searchHistory))
 }
 
 
-// $(".search-history").on("click", "li", function () {
-//     getCurrentWeather($(this).text());
-// });
-
 function renderHistoryItem(city) {
     var li = document.createElement("li")
     li.className = "list-group-item"
     li.textContent = city
-    li.addEventListener("click", function () {
-        console.log(city)
-    })
+    // li.addEventListener("click", function () {
+    //     //console.log(city)
+    // })
     document.getElementById("search-history").prepend(li)
 }
 
