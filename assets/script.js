@@ -12,10 +12,11 @@ $("#search-button").on("click", function (event) {
     getcurrentWeather(city);
     getForecast(city);
 })
-
+//When i click on my search history they remember the current weather and forecast
 $(".list-group-item").on("click", function () {
     console.log($(this).text())
     getcurrentWeather($(this).text());
+    getForecast($(this).text());
 })
 
 //2. Save to local Storage

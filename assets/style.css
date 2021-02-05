@@ -5,14 +5,7 @@ text {
 .search-bar {
     padding-left: 2rem;
 }
-/* 
-h5 {
-    padding-left: 2rem;
-} */
 
-/* .fa-search {
-    ;
-} */
 
 h2 {
     font-size: large;
@@ -37,4 +30,8 @@ background-size: cover;
 
 .card-body {
     font-weight: bold;
+}
+
+#fiveday {
+    border-radius: 50%;
 }
