@@ -4,6 +4,9 @@ var searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || []
 for (var i = 0; i < searchHistory.length; i++) {
     renderHistoryItem(searchHistory[i])
 }
+//focus on the search bar to let user know what to do
+$("#search-value").focus();
+
 //event listener on submit button
 $("#search-button").on("click", function (event) {
     //console.log(event.target);
@@ -104,7 +107,7 @@ function getForecast(city) {
         for (var i = 0; i < response.list.length; i++) {
             if (response.list[i].dt_txt.indexOf("15:00:00") !== -1) {
                 console.log(response.list.length[i])
-                var col = $("<div>").addClass("col-md-2");
+                var col = $("<div>").addClass("col-md-2 rounded-corners");
                 var card = $("<div>").addClass("card bg-primary text-white");
                 var body = $("<div>").addClass("card-body p-2");
 

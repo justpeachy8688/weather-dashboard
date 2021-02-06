@@ -32,6 +32,6 @@ background-size: cover;
     font-weight: bold;
 }
 
-#fiveday {
-    border-radius: 50%;
+.rounded-corners {
+    border-radius: 50px;
 }
